@@ -3,12 +3,12 @@ require('dotenv').config();
 
 const options = 
 {
-    host: process.env.HOSTNAME,
-    port: process.env.PORT,
+    host: process.env.DB_HOSTNAME,
+    port: process.env.DB_PORT,
     database:
-    `${process.env.MYSQL_DB_NAME }`,
-    username: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
+    `${process.env.DB_NAME }`,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     dialect: 'mysql',
     dialectOptions: {
     timezone: 'Z',
