@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
      BlogPost.belongsTo(models.users);
      models.users.hasMany(BlogPost);
+
+     BlogPost.hasMany(models.postcategory);
+     models.postcategory.belongsTo(BlogPost);
     }
   }
   BlogPost.init({

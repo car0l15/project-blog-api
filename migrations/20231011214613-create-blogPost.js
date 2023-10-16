@@ -1,6 +1,5 @@
 'use strict';
 
-const { id } = require('prelude-ls');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -26,7 +25,7 @@ module.exports = {
         allowNull: false,
         references: {
          model: 'users',
-         key: 'id', 
+         key: 'id',
         }
       },
       published: {
