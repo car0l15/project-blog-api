@@ -2,12 +2,16 @@
   "dependencies": {
     "@types/restify-errors": "4.3",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-async-errors": "3.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.2",
     "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
     "restify-errors": "8.0",
     "sequelize": "^6.33.0",
+    "sequelize-cli-typescript": "^3.2.0-c",
     "sequelize-typescript": "^2.1.5"
   },
   "name": "project-blogs-api",
