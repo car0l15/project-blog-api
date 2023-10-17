@@ -1,5 +1,6 @@
 import { Model, DataTypes, Sequelize } from 'sequelize'
-const sequelize = new Sequelize('sqlite::memory:');
+ const sequelize = new Sequelize('sqlite::memory:');
+
 
 class users extends Model 
 {
@@ -36,4 +37,3 @@ users.init({
     tableName: 'users',
     sequelize, 
   });
-  
