@@ -1,5 +1,7 @@
 import { Model, DataTypes, Sequelize } from 'sequelize'
- const sequelize = new Sequelize('sqlite::memory:');
+const config = require(__dirname + '/../config/config.js');
+import db from '.';
+
 
 
 class users extends Model 
@@ -35,5 +37,8 @@ users.init({
       },
   }, {
     tableName: 'users',
-    sequelize, 
+    sequelize: db, 
+    timestamps: false
   });
+
+export default users;

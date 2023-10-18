@@ -11,6 +11,8 @@ app.get('/', (_req, res) => {
     res.status(200).send('express + TypeScript UP');
 });
 
+// app.use('/', userRouter);
+
 app.use('/', userRouter);
 
 app.listen(PORT, () => {

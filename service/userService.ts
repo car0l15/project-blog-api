@@ -1,14 +1,9 @@
-const { users } = require('../models/users');
+import users from "../models/users";
 const { User } = require('../interfaces/IUser')
 
-const createUser = async (body: typeof User) =>
-{
-    const { displayName, email, password, image } = body;
-    const newUser = await users.create({displayName, email, password, image})
-
-    return newUser; 
+const getAllUsers = async () => {
+    const user = await users.findAll();
+    return user;
 }
 
-module.exports = {
-    createUser
-}
+export { getAllUsers};
