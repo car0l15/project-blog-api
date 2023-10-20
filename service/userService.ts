@@ -3,7 +3,7 @@ import User from "../interfaces/IUser";
 
 const getAllUsers = async () => 
 {
-    const user = await users.findAll();
+    const user = await users.findAll({ attributes: { exclude: ['password'] } });
     return user;
 }
 
