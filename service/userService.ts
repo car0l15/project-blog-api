@@ -10,6 +10,8 @@ const getAllUsers = async () =>
 const createUsers = async (body: User) => 
 {
     const { displayName, email, password, image } = body;
+
+       
     const user = await users.create({ displayName, email, password, image });
 
     return user;
