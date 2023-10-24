@@ -17,4 +17,16 @@ const createUsers = async (body: User) =>
     return user;
 }
 
-export { getAllUsers, createUsers};
+
+const getUserById = async (id: string) => {
+
+    
+    const user = users.findOne({
+      where: { id },
+      attributes: { exclude: ['password'] },
+    });
+  
+    return user;
+  };
+
+export { getUserById ,getAllUsers, createUsers };
