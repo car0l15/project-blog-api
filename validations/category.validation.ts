@@ -1,7 +1,8 @@
 import Joi, { Schema, ValidationResult } from 'joi';
 import { Response, Request, NextFunction } from 'express';
+import category from '../interfaces/ICategory';
 
-const categoryDTO: Schema = Joi.object({
+const categoryDTO: Schema = Joi.object<category>({
     name: Joi.string().label('name').min(3).required(),
 }).messages({
     'any.required': '{{ #label }} is required',
@@ -11,8 +12,10 @@ const categoryDTO: Schema = Joi.object({
 const categoryValidation = (req: Request, res: Response, next: NextFunction): Response | void => 
 {
     const { error } : ValidationResult = categoryDTO.validate(req.body, { abortEarly: true });
-
-    if(!error) return next()
+         
+    if(!error) {
+        return next();
+    }
 
     const errorMessage = error.message;
 
