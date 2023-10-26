@@ -1,6 +1,5 @@
 import express from 'express';
 import userRouter from './routes/userRoutes';
-import userValidation from './validations/user.validations';
 import categoryRouter from './routes/categoryRoutes';
 
 const app = express();
@@ -13,7 +12,7 @@ app.get('/', (_req, res) => {
     res.status(200).send('express + TypeScript UP');
 });
 
-// app.use('/', userValidation, userRouter);
+app.use('/', userRouter);
 app.use('/', categoryRouter);
 
 app.listen(PORT, () => {

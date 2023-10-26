@@ -27,7 +27,7 @@ const userValidation = (req: Request, res: Response, next: NextFunction) : Respo
         return res.status(400).json({ message: errorMessage });
     }
 
-    return res.status(400).json({ message: 'Invalid request' })
+    return res.status(400).json({ message: 'Invalid request' });
 }
 
 export default userValidation;
