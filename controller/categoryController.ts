@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { createCategory } from "../service/categoryService";
+import { createCategory, getCategories } from "../service/categoryService";
 
 const createNewCategory = async (req: Request, res: Response) => 
 {
@@ -7,4 +7,10 @@ const createNewCategory = async (req: Request, res: Response) =>
     res.status(201).json(result);
 }
 
-export { createNewCategory }
+const getAllCategories = async (req: Request, res: Response) => 
+{
+    const result = await getCategories();
+    res.status(200).json(result);
+}
+
+export { createNewCategory, getAllCategories }

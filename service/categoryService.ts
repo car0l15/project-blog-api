@@ -12,4 +12,10 @@ const createCategory = async (body: category) =>
     return newCategory;
 }
 
-export { createCategory };
+const getCategories = async () => 
+{
+    const categories = await Category.findAll();
+    return categories; 
+}
+
+export { createCategory, getCategories };
