@@ -1,6 +1,7 @@
 import express from 'express';
 import userRouter from './routes/userRoutes';
 import categoryRouter from './routes/categoryRoutes';
+const sequelize = require('./models').sequelize;
 
 const app = express();
 
@@ -14,6 +15,8 @@ app.get('/', (_req, res) => {
 
 app.use('/', userRouter);
 app.use('/', categoryRouter);
+
+sequelize.sync({ force: true })
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);

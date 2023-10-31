@@ -1,4 +1,5 @@
 interface category {
+
     name: string
 }
 

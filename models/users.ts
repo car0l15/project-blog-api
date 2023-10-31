@@ -1,6 +1,7 @@
 import { Model, DataTypes, Sequelize } from 'sequelize'
 const config = require(__dirname + '/../config/config.js');
 import db from '.';
+import BlogPost from './blogpost';
 
 
 
@@ -40,5 +41,10 @@ users.init({
     sequelize: db, 
     timestamps: false
   });
+
+  users.hasMany(BlogPost, {
+    foreignKey: 'userId',
+    as: 'BlogPost'
+  })
 
 export default users;
