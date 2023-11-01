@@ -2,6 +2,7 @@ import { Model, DataTypes } from 'sequelize';
 const config = require(__dirname + '/../config/config.js');
 import db from '.';
 import users from './users';
+import PostCategory from './postcategory';
 
 class BlogPost extends Model 
 {
@@ -18,6 +19,7 @@ BlogPost.init({
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
+        allowNull: false,
       },
     title: {
         type: new DataTypes.STRING(128),
@@ -44,6 +46,11 @@ BlogPost.init({
  BlogPost.belongsTo(users, {
     foreignKey: 'userId',
     as: 'users'
+ })
+
+ BlogPost.hasMany(PostCategory, {
+  foreignKey: 'post_id',
+  as: 'PostCategory'
  })
 
  export default BlogPost;

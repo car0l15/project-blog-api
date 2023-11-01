@@ -1,5 +1,6 @@
 import { Model, DataTypes } from "sequelize";
 import db from '.';
+import PostCategory from "./postcategory";
 
 class Category extends Model
 {
@@ -24,5 +25,10 @@ Category.init({
   sequelize: db,
   timestamps: false
 });
+
+Category.hasMany(PostCategory, {
+  foreignKey: 'category_id',
+  as: 'PostCategory'
+})
 
 export default Category;
